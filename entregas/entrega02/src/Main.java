@@ -31,9 +31,7 @@ public class Main {
             System.out.printf("%s %s\n", person.getFirstName(), person.getLastName());
         }
 
-        Arrays.sort(personsList, Comparator.comparing(Person::getLastName, (p1, p2) -> {
-            return p2.compareTo(p1);
-        }));
+        Arrays.sort(personsList, Comparator.comparing(Person::getLastName, Comparator.reverseOrder()));
 
         System.out.println("\nArray sorted by last name (descending order):");
         for (Person person : personsList) {
