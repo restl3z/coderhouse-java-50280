@@ -1,9 +1,7 @@
 package coderhouse.entrega03.controllers;
 
 import coderhouse.entrega03.models.saleModel;
-import coderhouse.entrega03.repositories.productRepository;
 import coderhouse.entrega03.repositories.saleRepository;
-import coderhouse.entrega03.repositories.userRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
