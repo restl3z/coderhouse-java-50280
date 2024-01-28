@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Table(name = "sales")
 @Getter
@@ -16,14 +14,16 @@ public class saleModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "productID")
-    private Long productID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "productID", nullable = false)
+    private productModel product;
 
     @Column(name = "productName")
     private String productName;
 
-    @Column(name = "userID")
-    private Long userID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userID", nullable = false)
+    private userModel user;
 
     @Column(name = "userName")
     private String userName;
